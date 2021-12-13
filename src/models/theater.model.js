@@ -11,6 +11,6 @@ const theaterSchema = new mongoose.Schema({
     
 })
 
-const theater = mongoose.model("theater",theaterSchema)
+const   Theater = mongoose.model("theater",theaterSchema)
 
-module.exports = theater;
+module.exports = Theater;

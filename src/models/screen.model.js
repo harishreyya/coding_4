@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const screenSchema = new mongoose.Schema({
     
     name : [{type:String,required:true}],
-    theater : [{type: mongoose.Schema.Types.ObjectId,ref:"theater",required:true}],
+    theater : [{type: mongoose.Schema.Types.ObjectId,ref:"theaters",required:true}],
    
 },{
     versionKey:false,
@@ -11,6 +11,6 @@ const screenSchema = new mongoose.Schema({
     
 })
 
-const screen = mongoose.model("screen",screenSchema)
+const Screen = mongoose.model("screen",screenSchema)
 
-module.exports = screen;
+module.exports = Screen;

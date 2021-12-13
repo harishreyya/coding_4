@@ -2,23 +2,23 @@ const express = require("express");
 
 const router = express.Router();
 
-const show = require("../models/show.model")
+const Show = require("../models/show.model")
 
 const crudController = require("./crud.controller")
 
-router.post("",crudController.post(show))
+router.post("",crudController.post(Show))
 
 router.get("",async(req,res)=>{
 
-    const show = await
+    const shows = await
 
-    show.find().lean().exec()
+    Show.find().lean().exec()
 
-    return res.status(200).send({show})
+    return res.status(200).send({shows})
 
 })
 
-router.delete("/:id",crudController.deleteOne(show))
+router.delete("/:id",crudController.deleteOne(Show))
 
 module.exports = router;
 

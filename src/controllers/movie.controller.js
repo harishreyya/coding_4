@@ -1,23 +1,21 @@
-const express = require("express");
+const express = require("express")
 
 const router = express.Router();
 
-const movies = require("../models/movie.model")
-
+const Movie = require("../models/movie.model")
 const crudController = require("./crud.controller")
 
-router.post("",crudController.post(movies))
-
-router.get("",async(req,res)=>{
-
-    const movies = await
-
-    movies.find().lean().exec()
+router.post("",crudController.post(Movie))
+router.get("", async(req,res) => {
+    const movies = await Movie.find().lean().exec()
 
     return res.status(200).send({movies})
+});
 
-})
 
-router.delete("/:id",crudController.deleteOne(movies))
 
-module.exports = router;
+router.delete("/:id", crudController.deleteOne(Movie))
+
+
+
+module.exports = router

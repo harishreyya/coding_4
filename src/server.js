@@ -12,15 +12,18 @@ const screenController = require("./controllers/screen.controller")
 
 const showController = require("./controllers/show.controller")
 
+const seatsController = require("./controllers/seats.controller")
+
 const app = express();
 
 app.use(express.json());
 
 app.use("/users",userController)
 app.use("/movies",moviesController)
-app.use("/theater",theaterController)
-app.use("/screen",screenController)
-app.use("/show",showController)
+app.use("/theaters",theaterController)
+app.use("/screens",screenController)
+app.use("/shows",showController)
+app.use("/seats",seatsController)
 
 
 app.listen(2345, async function (){
